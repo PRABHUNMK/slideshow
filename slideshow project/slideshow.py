@@ -13,6 +13,8 @@ root.geometry("1200x1200")
 img=ImageTk.PhotoImage(Image.open("1.jpg"))
 img2=ImageTk.PhotoImage(Image.open("2.jpg"))
 img3=ImageTk.PhotoImage(Image.open("3.jpg"))
+img4=ImageTk.PhotoImage(Image.open("4.jpg"))
+img5=ImageTk.PhotoImage(Image.open("5.jpg"))
 
 l=Label()
 l.pack()
@@ -25,7 +27,7 @@ x = 1
 # function to change to next image
 def move():
 	global x
-	if x == 4:
+	if x == 6:
 		x = 1
 	if x == 1:
 		l.config(image=img)
@@ -33,8 +35,12 @@ def move():
 		l.config(image=img2)
 	elif x == 3:
 		l.config(image=img3)
+	elif x == 4:
+		l.config(image=img4)
+	elif x == 5:
+		l.config(image=img5)
 	x = x+1
-	root.after(2000, move)
+	root.after(20000, move)
 
 # calling the function
 move()
